@@ -17,24 +17,29 @@ export class updateEventoDto{
 
     @IsNotEmpty()
     @IsString()
-    readonly data: Date;
+    readonly data: string;
 
     @IsNotEmpty()
     @IsString()
     readonly hora: string;
 
     @IsNotEmpty()
-    @IsNumber()
-    readonly valor: number;
+    @IsString()
+    readonly valor: string;
 
     @IsNotEmpty()
     @IsString()
-    readonly criadoEm: Date;
+    readonly criadoEm: string;
 
     @IsNotEmpty()
     @IsString()
-    readonly atualizadoEm: Date;
+    readonly atualizadoEm: string;
 
     @IsEmpty({message: 'Não é necessário informar o usuário'})
-    readonly user: User
+    readonly user: User;
+
+    @IsNotEmpty()
+    @IsString()
+    image: string;
+
 }

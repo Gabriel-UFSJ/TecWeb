@@ -1,7 +1,8 @@
 import { IsNotEmpty, IsString, IsDate, IsNumber, IsEmpty } from "class-validator";
 import { User } from "src/auth/schemas/user.schema";
+import { UploadedFile } from "@nestjs/common";
 
-export class createEventoDto{
+export class createEventoDto {
 
     @IsNotEmpty()
     @IsString()
@@ -17,24 +18,27 @@ export class createEventoDto{
 
     @IsNotEmpty()
     @IsString()
-    readonly data: Date;
+    readonly data: string;
 
     @IsNotEmpty()
     @IsString()
     readonly hora: string;
 
     @IsNotEmpty()
-    @IsNumber()
-    readonly valor: number;
+    @IsString()
+    readonly valor: string;
 
     @IsNotEmpty()
     @IsString()
-    readonly criadoEm: Date;
+    readonly criadoEm: string;
 
     @IsNotEmpty()
     @IsString()
-    readonly atualizadoEm: Date;
+    readonly atualizadoEm: string;
 
-    @IsEmpty({message: 'Não é necessário informar o usuário'})
-    readonly user: User
+    @IsEmpty({ message: 'Não é necessário informar o usuário' })
+    readonly user: User;
+
+    image?: Express.Multer.File;
+
 }

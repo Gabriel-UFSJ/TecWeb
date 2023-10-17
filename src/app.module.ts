@@ -3,9 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { EventoModule } from './evento/evento.module';
 import { ConfigModule } from '@nestjs/config';
-import { Mongoose } from 'mongoose';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
+import { DepoimentosModule } from './depoimentos/depoimentos.module';
+import { ImagensModule } from './imagens/imagens.module';
 
 @Module({
   imports: [
@@ -16,6 +17,8 @@ import { AuthModule } from './auth/auth.module';
     MongooseModule.forRoot(process.env.DB_URI),
     EventoModule,
     AuthModule,
+    DepoimentosModule,
+    ImagensModule,
   ],
   controllers: [AppController],
   providers: [AppService],

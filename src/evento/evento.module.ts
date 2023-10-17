@@ -7,10 +7,10 @@ import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
   imports: [
-    AuthModule, 
+    AuthModule,
     MongooseModule.forFeature([{ name: 'Evento', schema: EventoSchema }])
   ],
   controllers: [EventoController],
   providers: [EventoService]
 })
-export class EventoModule {}
+export class EventoModule { }
