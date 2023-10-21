@@ -3,6 +3,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { Response } from 'express';
 import { ImagensService } from './imagens.service';
 import { AuthGuard } from '@nestjs/passport';
+import * as sharp from 'sharp';
 
 @Controller('imagens')
 export class ImagensController {
@@ -12,7 +13,16 @@ export class ImagensController {
   @UseGuards(AuthGuard())
   @UseInterceptors(FileInterceptor('imagem'))
   async uploadImagem(@UploadedFile() imagem: Express.Multer.File): Promise<string> {
-    const fileName = await this.imagensService.uploadImagem(imagem);
+    // Redimensione a imagem para as dimensões desejadas (exemplo: 1920x1080)
+    const resizedImageBuffer = await sharp(imagem.buffer)
+      .resize(1920, 1080)
+      .toBuffer();
+
+    const fileName = await this.imagensService.uploadImagem({
+      ...imagem,
+      buffer: resizedImageBuffer, // Substitua o buffer original pela imagem redimensionada
+    });
+
     return fileName;
   }
 
