@@ -14,7 +14,7 @@ export class DepoimentosService {
     ) {}
 
     async findAll(query: Query): Promise<Depoimentos[]> {
-        const resPerPage = 2;
+        const resPerPage = 3;
         const currentPage = Number(query.page) || 1;
         const skip = resPerPage * (currentPage - 1);
 

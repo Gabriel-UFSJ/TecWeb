@@ -11,13 +11,19 @@ export class Depoimentos {
     descricao: string;
 
     @Prop()
-    criadoEm: Date;
+    nome: string;
+
+    @Prop()
+    criadoEm: String;
 
     @Prop() 
-    atualizadoEm: Date;
+    atualizadoEm: String;
 
     @Prop({type: mongoose.Schema.Types.ObjectId, ref: 'User'})
     user: User;
+
+    @Prop() 
+    image: string;
 }
 
 export const DepoimentosSchema = SchemaFactory.createForClass(Depoimentos);

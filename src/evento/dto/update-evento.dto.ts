@@ -35,11 +35,9 @@ export class updateEventoDto{
     @IsString()
     readonly atualizadoEm: string;
 
-    @IsEmpty({message: 'Não é necessário informar o usuário'})
+    @IsEmpty({ message: 'Não é necessário informar o usuário' })
     readonly user: User;
 
-    @IsNotEmpty()
-    @IsString()
-    image: string;
+    image: Express.Multer.File;
 
 }

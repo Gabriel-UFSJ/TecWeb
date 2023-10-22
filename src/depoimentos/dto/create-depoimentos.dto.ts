@@ -7,14 +7,20 @@ export class CreateDepoimentosDto {
     descricao: string;
 
     @IsNotEmpty()
-    @IsDate()
-    criadoEm: Date;
+    @IsString()
+    nome: string;
 
     @IsNotEmpty()
-    @IsDate()
-    atualizadoEm: Date;
+    @IsString()
+    criadoEm: String;
+
+    @IsNotEmpty()
+    @IsString()
+    atualizadoEm: String;
 
     @IsEmpty({message: 'Não é necessário informar o usuário'})
-    readonly user: User
+    readonly user: User;
+
+    image: Express.Multer.File;
 }
 

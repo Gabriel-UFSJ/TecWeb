@@ -55,13 +55,28 @@ export class EventoController {
 
     @Put(':id')
     @UseGuards(AuthGuard())
+    @UseInterceptors(
+        FileInterceptor('image', {
+            storage: diskStorage({
+                destination: './uploads', // Diretório onde as imagens serão armazenadas
+                filename: (req, file, cb) => {
+                    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+                    cb(null, `${uniqueSuffix}-${file.originalname}`);
+                },
+            }),
+        }),
+    )
     async updateEvento(
-        @Param('id')
-        id: string,
-        @Body()
-        evento: updateEventoDto,
+        @UploadedFile() image: Express.Multer.File, // Recuperar o arquivo enviado
+        @Param('id') id: string,
+        @Body() eventoDto: updateEventoDto,
     ): Promise<Evento> {
-        return this.eventoService.updateById(id, evento)
+
+        const evento = {
+            ...eventoDto,
+            image: image.filename,
+        }
+        return this.eventoService.updateById(id, evento); // Passar o arquivo para o serviço, se necessário
     }
 
     @Delete(':id')
