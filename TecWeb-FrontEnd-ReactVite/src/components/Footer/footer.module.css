@@ -1,0 +1,26 @@
+.container {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+    background: var(--gray-700);
+    color: var(--gray-100);  
+ }
+ 
+ .copyrighting {
+    margin-left: 3rem;
+    color: var(--gray-300);
+ }
+ 
+ .contact {
+    margin-right: 3rem;
+    color: var(--gray-300);
+    
+ }
+ 
+ .contact a {
+    color: var(--gray-300);
+    text-decoration: none;
+ }

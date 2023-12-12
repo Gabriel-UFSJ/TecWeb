@@ -1,0 +1,79 @@
+/* Estilo para o corpo da página */
+body {
+  background-color: var(--gray-600);
+  color: var(--gray-100);
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Estilo para o Container do Carousel */
+.carousel-container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilo para o Carousel */
+.carousel {
+  background-color: transparent; /* Define a cor de fundo do Carousel */
+}
+
+/* Estilo para os itens do Carousel */
+.carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilo para a imagem do evento no Carousel */
+.carousel-item img {
+  max-height: 400px; /* Altura máxima para a imagem */
+  object-fit: cover; /* Redimensiona a imagem para cobrir a área */
+}
+
+/* Estilo para as legendas do Carousel */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo semi-transparente para as legendas */
+  padding: 10px; /* Espaçamento interno das legendas */
+  border-radius: 5px; /* Borda arredondada */
+  color: var(--gray-100); /* Cor do texto das legendas */
+}
+
+/* Estilo para o botão "Ver mais" nas legendas */
+.carousel-caption .btn-primary {
+  background-color: var(--blue); /* Cor de fundo do botão */
+  color: var(--gray-100); /* Cor do texto do botão */
+  border: none; /* Remove a borda do botão */
+  margin-top: 10px; /* Espaçamento superior do botão */
+}
+
+/* Estilo para o botão de controle anterior e próximo */
+.carousel-control-prev,
+.carousel-control-next {
+  width: auto; /* Largura automática para o tamanho do ícone */
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo dos botões de controle */
+  border-radius: 5px; /* Borda arredondada para os botões de controle */
+  padding: 10px; /* Espaçamento interno dos botões de controle */
+  color: var(--gray-100); /* Cor do ícone */
+}
+
+/* Estilo para o ícone de controle anterior e próximo */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  font-size: 24px; /* Tamanho do ícone */
+  color: var(--gray-100); /* Cor do ícone */
+}
+
+/* Estilo para o ícone de controle anterior e próximo quando hover */
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  color: var(--blue); /* Cor do ícone ao passar o mouse */
+}
+
+.dark-background {
+  background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo escura com transparência */
+  padding: 10px; /* Espaçamento interno para o texto */
+  color: white; /* Cor do texto */
+}
+
+
+
